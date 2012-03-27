@@ -1,0 +1,2 @@
+daqfcngen
+daqscope
