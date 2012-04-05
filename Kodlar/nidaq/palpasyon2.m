@@ -9,9 +9,9 @@ while true
     if (portval == sonuc)
         sonuc = not(sonuc)
         if portval == 1
-            fprintf('býraktý\n')
+            fprintf('birakti\n')
         else
-            fprintf('bastý\n')
+            fprintf('basti\n')
         end
     end
 
