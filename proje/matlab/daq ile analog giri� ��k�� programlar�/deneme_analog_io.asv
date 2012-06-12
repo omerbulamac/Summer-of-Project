@@ -1,0 +1,39 @@
+% 
+% http://www.mathworks.com/help/toolbox/daq/f8-23031.html
+%
+clc;clear all;
+
+AO = analogoutput('nidaq', 'Dev1');
+AI = analoginput('nidaq', 'Dev1');
+
+chan = addchannel(AO, 0);
+chan = addchannel(AI, 0);  % ACH0 68 nolu pin
+
+% output
+duration = 10;   % data verisinin osilaskop ekranýnda kaç saniye boyunca gösterilme süresi
+set(AO, 'SampleRate', 10000)
+set(AO, 'TriggerType', 'Manual')
+ActualRate = get(AO,'SampleRate');
+len = ActualRate*duration;
+data = 1*sin(linspace(0,2*pi*1500,len))';  % ekrana çizilecek sinüs sinyali tanýmlanýyor
+
+putdata(AO, data);
+get (AO, 'SamplesOutput')
+
+% input
+duration = 1; %1 second acquisition
+set(AI,'SampleRate',10000)
+ActualRate = get(AI,'SampleRate');
+set(AI,'SamplesPerTrigger',duration*ActualRate)
+set(AI,'TriggerType','Manual')
+blocksize = get(AI,'SamplesPerTrigger');
+Fs = ActualRate;
+
+start(AI)
+trigger(AI)
+wait(AI,duration + 1)
+
+data = getdata(AI);
+
+delete(AI)
+clear AI
