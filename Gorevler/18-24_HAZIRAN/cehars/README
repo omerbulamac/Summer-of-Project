@@ -8,7 +8,7 @@ http://www.codeforge.com/s/0/ecg-signal-FFT
 http://ecg-simulator.com/
 http://www.mathworks.com/help/toolbox/daq/f8-23031.html
 
-http://simecg.sourceforge.net/
+http://simecg.sourceforge.net/ (simECG programı hem windowsta hemde ubuntuda çalıştırıldı)
 http://www.physionet.org/physiotools/matlab/ECGwaveGen/
 
 sinüs sinyali ekrana çizildi(daq kartı üzerinden)
