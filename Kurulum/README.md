@@ -1,0 +1,1 @@
+Projeye ait her türlü program, paket, kütüphane vb. kurulum ayrýntýlarý burada bulunur.
