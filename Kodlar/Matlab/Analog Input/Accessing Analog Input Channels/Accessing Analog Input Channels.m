@@ -1,15 +1,15 @@
-%Baþlamak için bir analog giriþ nesnesi, ai, winsound cihaz için oluþturulur.
+%Baï¿½lamak iï¿½in bir analog giriï¿½ nesnesi, ai, winsound cihaz iï¿½in oluï¿½turulur.
 ai = analoginput('winsound');
 
-%ADDCHANNEL komutu ile bir analog giriþ nesnesi bir kanal ekleyebilirsiniz.
+%ADDCHANNEL komutu ile bir analog giriï¿½ nesnesi bir kanal ekleyebilirsiniz.
 ch1 = addchannel(ai, 1);
 ch1
 
-%1. deðiþim yöntemi
+%1. deï¿½iï¿½im yï¿½ntemi
 ch1.Units = 'ceng';
 ch1
 
-%2. deðiþim yöntemi
+%2. deï¿½iï¿½im yï¿½ntemi
 set(ai.Channel, 'SensorRange', [-0.5 0.5]);
 set(ai.Channel, 'InputRange', [-1 1]);
 set(ai.Channel, 'UnitsRange', [0 120]);
